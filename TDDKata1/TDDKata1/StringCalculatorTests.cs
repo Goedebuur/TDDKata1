@@ -15,17 +15,17 @@ namespace TDDKata1
         }
 
         [Test]
-        public void Add_WithNumberDeliminator_Sums()
+        [ExpectedException(ExpectedException = typeof (NegativesNumberException))]
+        public void Add_NegativeNumber_Throws()
         {
             //Arrange
             StringCalculator sc = CreateNewStringCalculator();
-            string stringWithNewLine = "//;\n1;2";
+            const string stringWithNewLine = "-1";
 
             //Act
             int result = sc.Add(stringWithNewLine);
 
             //Assert
-            Assert.AreEqual(3, result);
         }
 
         [Test]
@@ -66,6 +66,20 @@ namespace TDDKata1
 
             //Act
             int result = sc.Add(stringWithTwoPositiveNumbers);
+
+            //Assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void Add_WithNumberDeliminator_Sums()
+        {
+            //Arrange
+            StringCalculator sc = CreateNewStringCalculator();
+            string stringWithNewLine = "//;\n1;2";
+
+            //Act
+            int result = sc.Add(stringWithNewLine);
 
             //Assert
             Assert.AreEqual(3, result);
