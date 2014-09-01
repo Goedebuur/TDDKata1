@@ -15,6 +15,20 @@ namespace TDDKata1
         }
 
         [Test]
+        public void Add_IgoreNumbersGreaterThenThousand_Sums()
+        {
+            //Arrange
+            StringCalculator sc = CreateNewStringCalculator();
+            const string stringWithThousandOne = "1, 1001";
+
+            //Act
+            int result = sc.Add(stringWithThousandOne);
+
+            //Assert
+            Assert.AreEqual(1, result);
+        }
+
+        [Test]
         [ExpectedException(ExpectedException = typeof (NegativesNumberException))]
         public void Add_NegativeNumber_Throws()
         {

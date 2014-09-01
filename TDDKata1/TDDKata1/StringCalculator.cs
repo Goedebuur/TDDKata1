@@ -38,6 +38,11 @@ namespace TDDKata1
                     _negatives.Add(parsedString);
                 }
 
+                if (IsGreaterThenThousand(parsedString))
+                {
+                    continue;
+                }
+
                 result += parsedString;
             }
 
@@ -57,6 +62,11 @@ namespace TDDKata1
         private bool IsNegative(int parsedString)
         {
             return parsedString < 0;
+        }
+
+        private bool IsGreaterThenThousand(int parsedString)
+        {
+            return parsedString > 1000;
         }
 
         private void SetDelims()
