@@ -14,6 +14,20 @@ namespace TDDKata1
             Assert.AreEqual(0, result);
         }
 
+        [Test]
+        public void Add_StringWithNewLine_Sums()
+        {
+            //Arrange
+            StringCalculator sc = CreateNewStringCalculator();
+            string stringWithNewLine = "1\n2,3";
+
+            //Act
+            int result = sc.Add(stringWithNewLine);
+
+            //Assert
+            Assert.AreEqual(6, result);
+        }
+
         [TestCase("1", 1)]
         [TestCase("2", 2)]
         public void Add_StringWithOneNumber_Sums(string input, int expected)

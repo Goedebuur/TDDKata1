@@ -1,7 +1,11 @@
-﻿namespace TDDKata1
+﻿using System.Linq;
+
+namespace TDDKata1
 {
     public class StringCalculator
     {
+        public static void Main(string[] args) {}
+
         public int Add(string input)
         {
             if (input == string.Empty)
@@ -10,8 +14,11 @@
             }
 
             int result = 0;
-                
-            foreach (var stringNumber in input.Split(','))
+            var lines = GetLines(input);
+
+            foreach (string stringNumber in lines
+                .Select(line => line.Split(','))
+                .SelectMany(numbers => numbers))
             {
                 int parsedString;
                 int.TryParse(stringNumber, out parsedString);
@@ -22,9 +29,9 @@
             return result;
         }
 
-        public static void Main(string[] args)
+        private string[] GetLines(string input)
         {
-            
+            return input.Split('\n');
         }
     }
 }
