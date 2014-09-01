@@ -14,6 +14,21 @@ namespace TDDKata1
             Assert.AreEqual(0, result);
         }
 
+        [TestCase("//[***]\n1***2***3", 6)]
+        [TestCase("//[abc]\n1abc2abc3", 6)]
+        public void Add_WithAnyLengthNumberDeliminator_Sums(string input, int expected)
+        {
+            //Arrange
+            StringCalculator sc = CreateNewStringCalculator();
+            string stringWithLongDeliminator = input;
+
+            //Act
+            int result = sc.Add(stringWithLongDeliminator);
+
+            //Assert
+            Assert.AreEqual(expected, result);
+        }
+
         [Test]
         public void Add_IgoreNumbersGreaterThenThousand_Sums()
         {
@@ -26,6 +41,34 @@ namespace TDDKata1
 
             //Assert
             Assert.AreEqual(1, result);
+        }
+
+        [Test]
+        public void Add_WithMultipleNumberDeliminator_Sums()
+        {
+            //Arrange
+            StringCalculator sc = CreateNewStringCalculator();
+            string stringWithMultipleDeliminator = "//[*][%]\n1*2%3";
+
+            //Act
+            int result = sc.Add(stringWithMultipleDeliminator);
+
+            //Assert
+            Assert.AreEqual(6, result);
+        }
+
+        [Test]
+        public void Add_WithMultipleLongNumberDeliminator_Sums()
+        {
+            //Arrange
+            StringCalculator sc = CreateNewStringCalculator();
+            string stringWithMultipleLongDeliminator = "//[**][%%%]\n1**2%%%3";
+
+            //Act
+            int result = sc.Add(stringWithMultipleLongDeliminator);
+
+            //Assert
+            Assert.AreEqual(6, result);
         }
 
         [Test]
