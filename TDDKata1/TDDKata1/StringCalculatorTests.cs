@@ -15,11 +15,25 @@ namespace TDDKata1
         }
 
         [Test]
+        public void Add_WithNumberDeliminator_Sums()
+        {
+            //Arrange
+            StringCalculator sc = CreateNewStringCalculator();
+            string stringWithNewLine = "//;\n1;2";
+
+            //Act
+            int result = sc.Add(stringWithNewLine);
+
+            //Assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
         public void Add_StringWithNewLine_Sums()
         {
             //Arrange
             StringCalculator sc = CreateNewStringCalculator();
-            string stringWithNewLine = "1\n2,3";
+            const string stringWithNewLine = "1\n2,3";
 
             //Act
             int result = sc.Add(stringWithNewLine);
@@ -48,7 +62,7 @@ namespace TDDKata1
         {
             //Arrange
             StringCalculator sc = CreateNewStringCalculator();
-            string stringWithTwoPositiveNumbers = "1,2";
+            const string stringWithTwoPositiveNumbers = "1,2";
 
             //Act
             int result = sc.Add(stringWithTwoPositiveNumbers);
