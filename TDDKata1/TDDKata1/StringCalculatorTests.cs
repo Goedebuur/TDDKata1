@@ -129,6 +129,20 @@ namespace TDDKata1
         }
 
         [Test]
+        public void Add_StringWithNumbers_Sums()
+        {
+            //Arrange
+            StringCalculator sc = CreateNewStringCalculator();
+            const string stringWithPositiveNumbers = "1,2,3";
+
+            //Act
+            int result = sc.Add(stringWithPositiveNumbers);
+
+            //Assert
+            Assert.AreEqual(6, result);
+        }
+
+        [Test]
         public void Add_WithNumberDeliminator_Sums()
         {
             //Arrange
