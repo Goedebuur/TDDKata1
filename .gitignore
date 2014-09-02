@@ -1,7 +1,7 @@
 #My Own
 *.obj
 *.bin
-DEBUG/
+DEBUG
 
 # Windows image file caches
 Thumbs.db
