@@ -37,7 +37,7 @@ namespace TDDKata1
             const string stringWithNewLine = "-1";
 
             //Act
-            int result = sc.Add(stringWithNewLine);
+            sc.Add(stringWithNewLine);
 
             //Assert
         }
@@ -120,7 +120,7 @@ namespace TDDKata1
         {
             //Arrange
             StringCalculator sc = CreateNewStringCalculator();
-            string stringWithMultipleLongDeliminator = "//[**][%%%]\n1**2%%%3";
+            const string stringWithMultipleLongDeliminator = "//[**][%%%]\n1**2%%%3";
 
             //Act
             int result = sc.Add(stringWithMultipleLongDeliminator);
@@ -134,7 +134,7 @@ namespace TDDKata1
         {
             //Arrange
             StringCalculator sc = CreateNewStringCalculator();
-            string stringWithMultipleDeliminator = "//[*][%]\n1*2%3";
+            const string stringWithMultipleDeliminator = "//[*][%]\n1*2%3";
 
             //Act
             int result = sc.Add(stringWithMultipleDeliminator);
@@ -148,7 +148,7 @@ namespace TDDKata1
         {
             //Arrange
             StringCalculator sc = CreateNewStringCalculator();
-            string stringWithNewLine = "//;\n1;2";
+            const string stringWithNewLine = "//;\n1;2";
 
             //Act
             int result = sc.Add(stringWithNewLine);

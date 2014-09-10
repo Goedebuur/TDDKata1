@@ -1,7 +1,0 @@
-D:\Users\Goedebuur\Documents\GitHub\TDDKata1\TDDKata1\TDDKata1\bin\Debug\TDDKata1.exe.config
-D:\Users\Goedebuur\Documents\GitHub\TDDKata1\TDDKata1\TDDKata1\bin\Debug\TDDKata1.exe
-D:\Users\Goedebuur\Documents\GitHub\TDDKata1\TDDKata1\TDDKata1\bin\Debug\TDDKata1.pdb
-D:\Users\Goedebuur\Documents\GitHub\TDDKata1\TDDKata1\TDDKata1\bin\Debug\nunit.framework.dll
-D:\Users\Goedebuur\Documents\GitHub\TDDKata1\TDDKata1\TDDKata1\bin\Debug\nunit.framework.xml
-D:\Users\Goedebuur\Documents\GitHub\TDDKata1\TDDKata1\TDDKata1\obj\Debug\TDDKata1.exe
-D:\Users\Goedebuur\Documents\GitHub\TDDKata1\TDDKata1\TDDKata1\obj\Debug\TDDKata1.pdb
